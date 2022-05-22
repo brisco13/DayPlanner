@@ -2,23 +2,22 @@ let holder = document.getElementById("container")
 let rightNow = moment()
 let dateTime = document.getElementById("currentDay")
 let calcNow = moment().unix()
-let hourNow = 14//moment().format("k") 
+let hourNow = moment().format("k") 
 let day = moment().format("MMM Do, YYYY")
-let pastHour = 13//moment().format("k");
+let pastHour = moment().format("k");
 let schedule = [];
 
 
 timeRefresh();
 // Check/create to local storage
 function checkCal() {
-    let hasCal = localStorage.getItem("hasCal");
-    if (hasCal === true) {
+    if (localStorage.getItem("hasCal") != null) {
         schedule = JSON.parse(localStorage.getItem("schedule"));
     } else {
         localStorage.setItem("hasCal", true);
         schedule = [
             ["8:00", ""],
-            ["9:00", "Test"],
+            ["9:00", ""],
             ["10:00", ""],
             ["11:00", ""],
             ["12:00", ""],
@@ -107,7 +106,7 @@ function timeRefresh () {
     let timeInterval = setInterval(function() {
         rightNow = moment().format("MMM Do, YYYY k:m:ss") 
         calcNow = moment().unix();
-        hourNow = 14//moment().format("k") 
+        hourNow = moment().format("k") 
         dateTime.textContent = "Current Date and Time: "+rightNow;
         if (pastHour<hourNow) {
             makeCal();
