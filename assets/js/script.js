@@ -104,7 +104,7 @@ function getCard(id) {
 // make jumbotron time
 function timeRefresh () {
     let timeInterval = setInterval(function() {
-        rightNow = moment().format("MMM Do, YYYY k:m:ss") 
+        rightNow = moment().format("MMM Do, YYYY k:mm:ss") 
         calcNow = moment().unix();
         hourNow = moment().format("k") 
         dateTime.textContent = "Current Date and Time: "+rightNow;
@@ -112,6 +112,7 @@ function timeRefresh () {
             makeCal();
             pastHour = hourNow;
         }
+        
 
     }, 1000);
 }

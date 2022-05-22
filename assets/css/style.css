@@ -29,9 +29,3 @@ body {
   .inputbox {
       display: inline-block;
   }
-
-  #instructions {
-    background-color: beige;
-    border: gray dotted 1px;
-    border-radius: 5%;
-  }
